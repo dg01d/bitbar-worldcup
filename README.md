@@ -18,7 +18,11 @@ Active game shows in menubar, using the FIFA abbreviations for that authentic fe
 
 Completed and active games display goalscorers in dropdown. Completed games link to FIFA's [Official Match Reports](https://www.fifa.com/worldcup/matches/).
 
-All data comes from the [JSON WorldCup API](http://worldcup.sfg.io)
+All data comes from the [JSON WorldCup API](http://worldcupjson.net)
+
+## Political Note
+
+These games should not be taking place. Qatar as a host nation flies in the face of FIFA's supposed commitments to equality and respect for all.
 
 ## Credits
 
