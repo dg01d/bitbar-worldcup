@@ -1,4 +1,4 @@
-#!/usr/bin/php
+#!/usr/bin/env php
 
 <?php
 
@@ -11,15 +11,15 @@
  * @license  https://opensource.org/licenses/FPL-1.0.0 0BSD
  * @link     https://github.com/dg01d/bitbar-worldcup
  * @category Utility
- * @version  2.1
- * <bitbar.title>World Cup 2018</bitbar.title>
- * <bitbar.version>v1.0</bitbar.version>
- * <bitbar.author>Daniel Goldsmith</bitbar.author>
- * <bitbar.author.github>dg01d</bitbar.author.github>
- * <bitbar.desc>Shows current and daily scores from the 2018 World Cup. Needs Steve Edson's bitbar-php: https://github.com/SteveEdson/bitbar-php </bitbar.desc>
- * <bitbar.image>https://raw.githubusercontent.com/dg01d/bitbar-worldcup/master/bitbar-worldcup.png</bitbar.image>
- * <bitbar.dependencies>php,bitbar-php</bitbar.dependencies>
- * <bitbar.abouturl>https://github.com/dg01d/bitbar-worldcup</bitbar.abouturl>
+ * @version  3.1
+ * <xbar.title>World Cup 2018</xbar.title>
+ * <xbar.version>v1.0</xbar.version>
+ * <xbar.author>Daniel Goldsmith</xbar.author>
+ * <xbar.author.github>dg01d</xbar.author.github>
+ * <xbar.desc>Shows current and daily scores from the 2018 World Cup. Needs Steve Edson's bitbar-php: https://github.com/SteveEdson/bitbar-php </xbar.desc>
+ * <xbar.image>https://raw.githubusercontent.com/dg01d/bitbar-worldcup/master/bitbar-worldcup.png</xbar.image>
+ * <xbar.dependencies>php,bitbar-php</xbar.dependencies>
+ * <xbar.abouturl>https://github.com/dg01d/bitbar-worldcup</xbar.abouturl>
  * Instructions: Install bitbar-php following the instructions on that project's github page.
  * Uses the wonderful World Cup API provided by http://worldcupjson.ney
  */
@@ -114,7 +114,7 @@ if (!empty($todayData)) {
             foreach ($arraySortEvents as $val) {
                 if (in_array($val['type_of_event'], array('goal', "goal-own", "goal-penalty"))) {
                     $scores .= "\n\033[35m";
-                    $scores .= $val['player'] . " " . $val['time'];
+                    $scores .= $val['player'] . " " . $val['time'] . "| size=11 ";
                 }
                 if ($val['type_of_event'] == "goal-penalty") {
                     $scores .= " (P)";
@@ -122,18 +122,20 @@ if (!empty($todayData)) {
                 if ($val['type_of_event'] == "goal-own") {
                     $scores .= " (OG)";
                 }
-                if (in_array($val['type_of_event'], array('red-card', "yellow-card"))) {
+                if (in_array($val['type_of_event'], array('red-card', "booking"))) {
                     $scores .= "\n\033[35m";
                     $scores .= $val['player'] . " " . $val['time'];
-                }
-                if ($val['type_of_event'] == "yellow-card") {
-                    $scores .= " \033[1;33m◼\033[0m";
-                }
-                if ($val['type_of_event'] == "red-card") {
-                    $scores .= " \033[1;31m◼\033[0m";
-                }
-                $scores .= " | size=11";
-            }
+                
+                    if ($val['type_of_event'] == "booking") {
+                        $scores .= " 🟨";
+                    }
+                    if ($val['type_of_event'] == "red-card") {
+                        $scores .= " 🟥";
+                    }
+                    $scores .= " | size=11 ";
+                    
+                }}
+
             $comGame = $line
                 ->setText($scores)
                 ->setDropdown(true);
