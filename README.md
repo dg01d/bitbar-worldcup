@@ -1,6 +1,6 @@
 # BitBar-WorldCup
 
-Small script to show current/daily World Cup information from https://github.com/estiens/world_cup_json in your [BitBar](https://getbitbar.com).
+Small script to show current/daily World Cup information from https://github.com/estiens/world_cup_json in your [xBar](https://xbarapp.com).
 
 ## Requirements
 
@@ -8,11 +8,11 @@ Needs Steve Edson's fantastic [bitbar-php](https://github.com/SteveEdson/bitbar-
 
 That's the only dependency, and Steve's script has no dependencies, other than composer in your php installation.
 
-Then put `bitbar-worldcup.1m.php` in your bitbar scripts folder.
+Then put `worldcup.1m.php` in your bitbar scripts folder.
 
 ## Screenshot
 
-![BitBar WorldCup](/bitbar-worldcup.png?raw=true "Screenshot")
+![xBar WorldCup](/bitbar-worldcup.png?raw=true "Screenshot")
 
 Active game shows in menubar, using the FIFA abbreviations for that authentic feel 🙂.
 
@@ -22,7 +22,7 @@ All data comes from the [JSON WorldCup API](http://worldcupjson.net)
 
 ## Political Note
 
-These games should not be taking place. Qatar as a host nation flies in the face of FIFA's supposed commitments to equality and respect for all.
+These games should not be taking place. Qatar as a host nation flies in the face of FIFA's supposed commitments to equality and respect for all. 
 
 ## Credits
 
