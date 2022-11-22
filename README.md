@@ -1,4 +1,4 @@
-# BitBar-WorldCup
+# xBar-WorldCup
 
 Small script to show current/daily World Cup information from https://github.com/estiens/world_cup_json in your [xBar](https://xbarapp.com).
 
